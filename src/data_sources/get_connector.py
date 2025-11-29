@@ -21,7 +21,7 @@ def get_connector(kpi_name) -> BaseDataSource:
 
 
 def main():
-    print(get_connector("sim_activation").read().head())
+    print(get_connector("kpi_a").read().head())
 
 
 if __name__ == "__main__":

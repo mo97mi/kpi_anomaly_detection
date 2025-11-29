@@ -5,7 +5,7 @@ from shared.to_date import to_date
 import pandas as pd
 
 
-kpi_name = "voice_400_min"
+kpi_name = "kpi_b"
 
 
 def train_kpi(kpi_name: str, save_flag: bool = False) -> None:

@@ -5,7 +5,7 @@ from shared.to_date import to_date
 import pandas as pd
 from shared.plot_models import plot_forecast
 
-kpi_name = "sim_activation"
+kpi_name = "kpi_a"
 
 
 def predict_kpi(
