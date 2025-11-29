@@ -5,7 +5,7 @@ from shared.to_date import to_date
 import pandas as pd
 from shared.plot_models import plot_forecast
 
-kpi_name = "voice_400_min"
+kpi_name = "kpi_b"
 
 
 def predict_kpi(
