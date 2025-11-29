@@ -1,0 +1,8 @@
+# ignore everything in logs
+logs/
+# ignore all notebooks and python compiled files
+*.ipynb
+*.pyc
+# ignore all trained models
+*.pkl
+*.joblib.*

@@ -1,0 +1,6 @@
+
+model:
+  model: 'prophet'
+data:
+  data_type: 'csv'
+  data_source: 'kpi_a.csv'
