@@ -1,18 +1,25 @@
 from shared.path_manager import PathManager
 from logger.logger import get_logger
-
-path_mgr = PathManager()
-log = get_logger()
+from .exceptions import KPINotFoundError
 
 
-def kpi_exists(kpi_name: str):
-    return path_mgr.dir_exists(f"kpis/{kpi_name}")
+class KPIService:
+    def __init__(self) -> None:
+        self._path_mgr = PathManager()
+        self._log = get_logger()
 
+    def run_train(self, kpi_name: str):
+        if self.kpi_exists(kpi_name):
+            return self._log.debug("train starts")
+        else:
+            raise KPINotFoundError(f"kpi {kpi_name} does not exists")
 
-def run_detection(kpi_name: str, data):
-    if kpi_exists(kpi_name):
-        pass
+    def kpi_exists(self, kpi_name: str):
+        return self._path_mgr.dir_exists(f"kpis/{kpi_name}")
 
 
 if __name__ == "__main__":
-    log.debug(kpi_exists("kpi_a"))
+    try:
+        KPIService().run_train("kpi_c")
+    except KPINotFoundError as e:
+        KPIService()._log.debug(e.args)
