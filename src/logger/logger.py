@@ -3,10 +3,10 @@ from shared.path_manager import PathManager
 from pathlib import Path
 import sys
 import inspect
+from shared.base_config import BASE_DIR
 
 # Base logs directory
-LOG_DIR = PathManager().log_dir
-LOG_DIR.mkdir(exist_ok=True)
+LOG_DIR = BASE_DIR / "logs"
 
 
 def get_logger():

@@ -14,11 +14,11 @@ class KPIData(BaseModel):
 
 @router.post("/detect/{kpi_name}")
 def detect(kpi_name: str, payload: KPIData):
-    result = detect_kpi(kpi_name, payload.data)
+    result = "detect_kpi"  # detect_kpi(kpi_name, payload.data)
     return {"result": result}
 
 
 @router.post("/train/{kpi_name}")
 def train(kpi_name: str):
-    train_kpi(kpi_name)
+    # train_kpi(kpi_name)
     return {"status": "training started"}

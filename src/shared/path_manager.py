@@ -1,5 +1,7 @@
 from pathlib import Path
-from os.path import join
+from logger.logger import get_logger
+
+log = get_logger()
 
 
 class PathManager:
@@ -69,10 +71,13 @@ class PathManager:
     def get(self, *subdirs):
         return self.base_dir.joinpath(*subdirs)
 
+    # ---- Generic existence checker ---- #
+    def dir_exists(self, dir_name: str) -> bool:
+        return Path.is_dir(self.base_dir / dir_name)
+
 
 def main():
-    path = PathManager()
-    print(path.kpi_config("sim_acitvation"))
+    log(PathManager().dir_exists("kpi_a"))
 
 
 if __name__ == "__main__":
