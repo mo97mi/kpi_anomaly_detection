@@ -1,5 +1,4 @@
 from loguru import logger
-from shared.path_manager import PathManager
 from pathlib import Path
 import sys
 import inspect

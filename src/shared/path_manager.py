@@ -77,7 +77,7 @@ class PathManager:
 
 
 def main():
-    log(PathManager().dir_exists("kpi_a"))
+    log.debug(PathManager().dir_exists("kpis/kpi_a"))
 
 
 if __name__ == "__main__":
